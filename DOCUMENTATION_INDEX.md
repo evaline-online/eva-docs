@@ -28,6 +28,7 @@
 ### 📊 [reports/](./reports/)
 Генеральные отчеты и финансовые сводки
 - [SESSION_FINAL_REPORT_2026-09-07.md](./reports/SESSION_FINAL_REPORT_2026-09-07.md) — итоговый генеральный отчет сессии (аудит, TUI-анатомия, учет OpEx, ростеры 10 Free/Paid агентов)
+- [BILLING_ACCOUNTING.md](./ops/BILLING_ACCOUNTING.md) — полный финансовый учет, CapEx/OpEx, Google Pixel 10 Pro XL, биллинг и метрики кластера
 
 ### 🛡️ [security/](./security/)
 Безопасность и аудиты
