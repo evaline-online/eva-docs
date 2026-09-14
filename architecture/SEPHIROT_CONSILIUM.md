@@ -30,7 +30,7 @@ Each consilium round walks the tree top-down, so the feedback from round N
 ## 2. The 10 Sephirot = 10 agents
 
 | # | Sephira (UK/RU) | Function | Persona | Model (free) | Parents |
-|---|------------------|----------|---------|--------------|---------|
+| --- | ------------------ | ---------- | --------- | -------------- | --------- |
 | 1 | Kether (Корона/Кетер) | Vision / CEO-vision — God-level intent | neutral | `gemini-3.1-pro` (2M ctx) | — (root) |
 | 2 | Chokmah (Мудрість/Мудрость) | Strategy — force/flash of the intent | neutral | `gemini-3.8-flash` | kether |
 | 3 | Binah (Розуміння/Понимание) | Analysis / Critique — form of the intent | neutral | `omniroute/deepseek-r1` | kether |
@@ -128,7 +128,7 @@ including its KB-context injection, token accounting and history persistence.
 ## 5. Mapping onto ConsiliumEngine internals
 
 | SephirotEngine concept | ConsiliumEngine counterpart |
-|---|---|
+| --- | --- |
 | `SEPHIROT_ROLES[i].id` | `ConsiliumParticipant.id` (`sephira-<id>`) |
 | `.model` (verified free) | `ConsiliumParticipant.model` (fallback chain from `ModelRatings.getFallbackChain` still applies) |
 | `.nameEn` / `.title` | `participant.name` / `participant.title` |

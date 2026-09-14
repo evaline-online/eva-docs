@@ -7,7 +7,9 @@
 ## 📂 Содержание
 
 ### [`SECURITY_AUDIT.md`](./SECURITY_AUDIT.md)
+
 Полный аудит безопасности проекта:
+
 - Обнаруженные угрозы
 - WordPress exploit атаки
 - Заблокированные IP
@@ -15,6 +17,7 @@
 - Fail2ban конфигурация
 
 ### [`AUDIT-2026-09-09.md`](./AUDIT-2026-09-09.md)
+
 SSH Hardening — remediation of open firewall (0.0.0.0/0 → IAP-only), OS Login enablement, IAM access control, legacy SSH key rotation.
 
 ---

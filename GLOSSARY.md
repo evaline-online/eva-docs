@@ -5,10 +5,10 @@
 ## RU — Глоссарий
 
 | Термин | Слой | Описание |
-|---|---|---|
+| --- | --- | --- |
 | **EvaBot** | Ядро | Главный AI-агент платформы; репозиторий `evabot-online` (v0.0.1 MVP) |
 | **EvaNet** | Сеть | Tailscale-mesh: `EvaBrain` ↔ ноутбук ↔ `EvaCell` ↔ `EvaPalm` |
-| **EvaFace** | Edge | Айова-шлюз `evaline-micro-vm` (e2-micro) — Caddy, https://evabot.online |
+| **EvaFace** | Edge | Айова-шлюз `evaline-micro-vm` (e2-micro) — Caddy, <https://evabot.online> |
 | **EvaBrain** | Compute | Вычислительное ядро `evabot-agent-vm` (c3-standard-8, europe-west3-a) |
 | **EvaCell** | Мобильный | Pixel 10 Pro XL — беспроводной узел (Tailscale `100.80.216.27`, ADB :5555) |
 | **EvaPalm** | Ретро-мост | Oppo A5 Pro 5G — второй карманный узел (USB через macbook) |
@@ -24,8 +24,9 @@
 | **EvaConsilium** — *не 6-букв., доуступный термин* | AI | Consilium Engine — мультиагентная консилиум-система |
 
 ### Карта устройств EvaNet
+
 | Узел | Tailscale IP | Статус |
-|---|---|---|
+| --- | --- | --- |
 | `EvaBrain` (evabot-agent-vm) | `100.66.98.4` | активен |
 | `EvaFace` (evaline-micro-vm) | `100.125.200.49` | активен |
 | macbook-air-2018 | `100.102.22.45` | активен |
@@ -35,10 +36,10 @@
 ## EN — Glossary
 
 | Term | Layer | Description |
-|---|---|---|
+| --- | --- | --- |
 | **EvaBot** | Core | The main AI agent; repository `evabot-online` |
 | **EvaNet** | Network | Tailscale mesh: `EvaBrain` ↔ laptop ↔ `EvaCell` ↔ `EvaPalm` |
-| **EvaFace** | Edge | Iowa edge gateway `evaline-micro-vm` serving https://evabot.online |
+| **EvaFace** | Edge | Iowa edge gateway `evaline-micro-vm` serving <https://evabot.online> |
 | **EvaBrain** | Compute | Frankfurt compute core `evabot-agent-vm` |
 | **EvaCell** | Mobile | Pixel 10 Pro XL — wireless node (Tailscale + ADB over Wi-Fi) |
 | **EvaLink** | Bridges | SSH/ADB tunnels, scripts and keys in `~/ssh-bridge/`, `~/eva-link/` |
@@ -49,10 +50,10 @@
 ## UK — Глосарій
 
 | Термін | Шар | Опис |
-|---|---|---|
+| --- | --- | --- |
 | **EvaBot** | Ядро | Головний AI-агент; репозиторій `evabot-online` |
 | **EvaNet** | Мережа | Tailscale-mesh: `EvaBrain` ↔ ноутбук ↔ `EvaCell` ↔ `EvaPalm` |
-| **EvaFace** | Edge | Шлюз в Айові `evaline-micro-vm` — https://evabot.online |
+| **EvaFace** | Edge | Шлюз в Айові `evaline-micro-vm` — <https://evabot.online> |
 | **EvaBrain** | Compute | Обчислювальне ядро `evabot-agent-vm` у Франкфурті |
 | **EvaCell** | Мобільний | Pixel 10 Pro XL — бездротовий вузол (Tailscale + ADB) |
 | **EvaLink** | Мости | SSH/ADB тунелі та ключі (`~/ssh-bridge/`, `~/eva-link/`) |

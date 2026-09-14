@@ -2,7 +2,7 @@
 
 **Итоговый генеральный отчет сессии: аудит, TUI-анатомия, учет OpEx, ростеры 10 Free/Paid агентов.**
 
-> **Статус:** Полный отчет перемещен в модуль **eva-reports** (https://github.com/evaline-network/eva-reports).
+> **Статус:** Полный отчет перемещен в модуль **eva-reports** (<https://github.com/evaline-network/eva-reports>).
 > Runtime-копия на сервере: `/var/www/eva-reports/reports/` (CompanyKnowledge: `../eva-reports/reports/`).
 
 ---

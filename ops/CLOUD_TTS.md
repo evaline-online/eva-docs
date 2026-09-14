@@ -59,7 +59,7 @@ X-Goog-User-Project: evabot-agent-server   ← REQUIRED for user-ADC auth
 ## ONLY-FREE rule & pricing verification (2026-09)
 
 Verified against the official pricing page
-**https://cloud.google.com/text-to-speech/pricing** (retrieved 2026-09-07):
+**<https://cloud.google.com/text-to-speech/pricing>** (retrieved 2026-09-07):
 
 | Family      | Free allowance / month | Price after free tier |
 |-------------|------------------------|-----------------------|
@@ -199,7 +199,7 @@ Output example:
 
 ## References
 
-- Pricing: https://cloud.google.com/text-to-speech/pricing (Chirp 3: HD free
+- Pricing: <https://cloud.google.com/text-to-speech/pricing> (Chirp 3: HD free
   tier & per-char prices verified 2026-09)
-- Voice list: https://cloud.google.com/text-to-speech/docs/list-voices-and-types
-- API reference: https://cloud.google.com/text-to-speech/docs/reference/rest/v1/text/synthesize
+- Voice list: <https://cloud.google.com/text-to-speech/docs/list-voices-and-types>
+- API reference: <https://cloud.google.com/text-to-speech/docs/reference/rest/v1/text/synthesize>

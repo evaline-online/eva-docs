@@ -6,7 +6,7 @@ The company site repo `/home/evabot/evaline-online` (53 MB) is now part of Eva's
 Content indexed (27 documents, trilingual en/uk/ru):
 
 | Content | Files | Categories |
-|---|---|---|
+| --- | --- | --- |
 | `docs/architecture.{en,uk,ru}.md` | 3 | architecture |
 | `docs/audit_and_diagnosis.{en,uk,ru}.md` | 3 | audit |
 | `docs/user_guide.{en,uk,ru}.md` | 3 | user-guide |
@@ -24,7 +24,7 @@ Skipped by design: `node_modules/`, `dist/`, `backups/`, `archive/`, `legacy_arc
 ## Counts
 
 | Metric | Before | After |
-|---|---|---|
+| --- | --- | --- |
 | SQLite FTS5 chunks (total) | 1086 | 1438 |
 | FTS chunks from evaline-online | 0 | 352 |
 | Memory documents | 178 | 205 |

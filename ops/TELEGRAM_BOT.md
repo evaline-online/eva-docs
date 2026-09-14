@@ -78,7 +78,7 @@ HTTPS to `api.telegram.org`.
 ## 5. Telegram-specific behaviors
 
 | Concern | Behavior |
-|---|---|
+| --- | --- |
 | 4096-char limit | `splitTelegramMessage()` splits on blank lines → newlines → spaces → hard cut; all chunks ≤ 4096 chars |
 | Unknown/`/` commands | normalized via `COMMAND_ALIASES` (UK/RU) and executed by the shared `ModelCommand` |
 | Long commands (`/free`, `/top`) | full text output, chunked automatically |

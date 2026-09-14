@@ -7,7 +7,9 @@
 ## 📂 Содержание
 
 ### [`KANBAN.md`](./KANBAN.md)
+
 Текущая доска задач:
+
 - ✅ Done (v0.0.1, v0.0.2)
 - 🔄 In Progress
 - 📋 Backlog (v0.1.0 - v1.0.0)

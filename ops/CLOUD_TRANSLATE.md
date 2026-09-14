@@ -96,4 +96,5 @@ OK: true | DETECTED: uk
 TRANSLATION: EVA foam plant in Chornomorsk
 USAGE: {"month":"2026-09","chars":29}
 ```
+
 Log: `/tmp/translate-verify.log`.

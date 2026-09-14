@@ -32,6 +32,7 @@ evabot-online/                   # GitHub: evaline-network/evabot-online
 ## 🚀 Деплой на 2 GCP сервера
 
 ### EvaBrain (Backend / Compute Core)
+
 - **VM:** `evabot-agent-vm` (Frankfurt, `europe-west3-a`)
 - **IP:** `34.159.202.82` (внешний), `100.66.98.4` (Tailscale)
 - **Specs:** c3-standard-8, 8 vCPU, 32 GB RAM
@@ -39,6 +40,7 @@ evabot-online/                   # GitHub: evaline-network/evabot-online
 - **Что деплоится:** `src/`, `dist/`, `package.json`
 
 ### EvaFace (Frontend / Edge Gateway)
+
 - **VM:** `evaline-micro-vm` (Iowa, `us-central1-a`)
 - **IP:** `136.114.26.252` (внешний), `100.125.200.49` (Tailscale)
 - **Specs:** e2-micro, 2 vCPU, 1 GB RAM (Always Free)
@@ -47,6 +49,7 @@ evabot-online/                   # GitHub: evaline-network/evabot-online
 - **Что деплоится:** `public/`, `index.html`
 
 ### Связь
+
 ```
 User -> evabot.online (443) -> Caddy (Iowa) -> WireGuard Mesh -> Backend (3000, Frankfurt)
 ```
@@ -56,13 +59,15 @@ User -> evabot.online (443) -> Caddy (Iowa) -> WireGuard Mesh -> Backend (3000, 
 ## 📊 Модели и рейтинги
 
 ### Сводка
+
 - **78 моделей** всего
 - **46 бесплатных** (FREE)
 - **32 платные** (PAID)
 
 ### Команды терминала
+
 | Команда | Описание |
-|---------|----------|
+| --------- | ---------- |
 | `/top` | Топ-5 free + топ-5 paid |
 | `/top free 10` | Топ-10 бесплатных |
 | `/top paid 10` | Топ-10 платных |
@@ -75,8 +80,9 @@ User -> evabot.online (443) -> Caddy (Iowa) -> WireGuard Mesh -> Backend (3000, 
 | `/clear` | Очистить экран |
 
 ### API Endpoints
+
 | Endpoint | Method | Описание |
-|----------|--------|----------|
+| ---------- | -------- | ---------- |
 | `/api/models` | GET | Все 78 моделей |
 | `/api/models/free` | GET | 46 бесплатных с рейтингами |
 | `/api/models/paid` | GET | 32 платные с рейтингами |

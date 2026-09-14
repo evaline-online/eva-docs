@@ -14,7 +14,7 @@ Back to [[index]]
 ## Current state (as of 2026-09-07)
 
 | Location | Contents | Status |
-|---|---|---|
+| --- | --- | --- |
 | `/opt/omniroute/omniroute.env` | 12 API keys/vars (plain text, mode-restricted) | **live source of truth for omniroute** |
 | `/var/www/evabot-backend/.env` | `PORT`, `HOST`, `DEFAULT_MODEL` — no secrets | stays local |
 | `/var/www/evabot-backend/.env.example` | placeholders only | no action |
@@ -28,7 +28,7 @@ Running services (omniroute, evabot-backend) still read from env files. Nothing 
 All named `evabot-<lowercase-var>`, project `evabot-agent-server`, 1 active version each, sha256-verified round-trip against source.
 
 | Secret | Source var | Source file | sha256 (first 16) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `evabot-gemini-api-key` | GEMINI_API_KEY | omniroute.env | `b3a16360c37b1eb8` |
 | `evabot-openrouter-api-key` | OPENROUTER_API_KEY | omniroute.env | `e9de15efe0312af0` |
 | `evabot-hf-token` | HF_TOKEN | omniroute.env | `c7e0c596ea0d142c` |
@@ -77,7 +77,7 @@ Alternatively, disable the 6 low-priority secrets' versions (they can be re-enab
 Executed on 2026-09-07: disabled the 6 low-priority versions (v1 of each) to bring active version count from **12 → 6** (exactly at free-tier limit). Disabled, not destroyed — values are preserved and can be re-enabled.
 
 | Secret | Version | Before | After |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `evabot-openrouter-api-key` | 1 | ENABLED | ENABLED (kept) |
 | `evabot-gemini-api-key` | 1 | ENABLED | ENABLED (kept) |
 | `evabot-groq-api-key` | 1 | ENABLED | ENABLED (kept) |
@@ -128,7 +128,7 @@ Auth is via **user ADC** (`evabot.online@gmail.com`), not a service account. Con
 Patterns scanned: `sk-or-v1-`, `gsk_`, `hf_`, `AIza`, `AQ\.`, `csk-`, `cfat_` in `/var/www/evabot-backend` (excl. node_modules, dist, .git).
 
 | File:line | Pattern | Last 4 | In git history? | Note |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | `src/core/GoogleAuthProvider.ts:37` | AIza | `AVlA` | YES (commit 58ea6d9, 0630109) | hardcoded Gemini key used as comparison — real key in source |
 | `src/core/Config.ts:56` | AIza | `AVlA` | YES (same key) | same hardcoded key |
 | `src/core/GeminiClient.ts:34` | AIza | `AVlA` | YES (same key) | same hardcoded key |

@@ -47,7 +47,7 @@ After success it updates the `CURRENT` pointer. On health-gate failure it prints
 ## EN — Recovery from partial failure
 
 | Situation | Recovery |
-|---|---|
+| --- | --- |
 | Build fails | Nothing happens. Fix code, re-run `npm run deploy`. |
 | Health gate fails, auto-rollback succeeded | Site is on the previous release. Investigate `journalctl -u evabot-brain -n 100`, fix, re-deploy. |
 | Health gate fails, no previous release (very first deploy) | Script keeps the new `CURRENT` and exits 1 with instructions. Restore manually: `tar -xzf backups/releases/<ts>.tar.gz -C /var/www/evabot-backend && sudo systemctl restart evabot-brain`. |
@@ -116,7 +116,7 @@ npm run rollback 20260908-185500   # прямой откат по timestamp
 ## RU — Восстановление при частичном сбое
 
 | Ситуация | Действие |
-|---|---|
+| --- | --- |
 | Сборка упала | Ничего не произошло. Исправить код, повторить `npm run deploy`. |
 | Гейт провален, автооткат сработал | Сайт на предыдущем релизе. Смотреть `journalctl -u evabot-brain -n 100`, исправить, задеплоить снова. |
 | Гейт провален, предыдущего релиза нет (самый первый деплой) | Скрипт записывает `CURRENT` и выходит с кодом 1. Ручное восстановление: `tar -xzf backups/releases/<ts>.tar.gz -C /var/www/evabot-backend && sudo systemctl restart evabot-brain`. |

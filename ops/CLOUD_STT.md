@@ -13,7 +13,7 @@ Back to [[index]]
 ## Endpoints
 
 | Component | Value |
-|---|---|
+| --- | --- |
 | API | `POST https://speech.googleapis.com/v1/speech:recognize` (v1) |
 | Model | `latest_long` (v1 standard — falls under the free tier) |
 | Auth | `Authorization: Bearer <token>` from [[GoogleAuthProvider]] (`src/core/GoogleAuthProvider.ts`) |

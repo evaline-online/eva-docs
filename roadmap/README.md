@@ -7,7 +7,9 @@
 ## 📂 Содержание
 
 ### [`ROADMAP.md`](./ROADMAP.md)
+
 Полный план развития:
+
 - ✅ v0.0.1 (MVP)
 - ✅ v0.0.2 (Security + KB)
 - 🚧 v0.1.0 (Sept 2026) — Vector embeddings + Mobile UI

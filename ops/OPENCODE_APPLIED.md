@@ -25,7 +25,7 @@ Backup: `~/.config/opencode/opencode.json.bak-20260907`. Final JSON validated wi
 ## 2. MCP additions (Part 2) — 3 verified, all added
 
 | Server | Command | Verification |
-|---|---|---|
+| --- | --- | --- |
 | **serena** | `~/.local/bin/serena start-mcp-server --context claude-code --project-from-cwd` | ✅ Installed via `uv tool install -p 3.13 serena-agent` (current README method, **not** the doc's `uvx git+https://…`). Launched from `/var/www/evabot-backend`: MCP server up with 21 tools, clean stdio lifecycle. Full path used per the docs' "discoverability" pitfall. |
 | **taskmaster** | `npx -y --package=task-master-ai task-master-mcp` | ✅ JSON-RPC `initialize` handshake answered (`Task Master MCP Server 0.43.1`). **Doc correction:** the doc's `claude-task-master` npm package (1.6.4) has no `task-master-mcp` binary (only `claude-task-init`) — its MCP server lives in `task-master-ai` (verified: `npm view task-master-ai bin`). |
 | **codebase-memory** | `~/.local/opt/codebase-memory-mcp/codebase-memory-mcp` | ✅ Static binary downloaded from GitHub release v0.10.8 (linux-amd64) to `~/.local/opt/codebase-memory-mcp/`. JSON-RPC `initialize` handshake answered; stdio default mode per `--help`. |
@@ -38,7 +38,7 @@ Backup: `~/.config/opencode/opencode.json.bak-20260907`. Final JSON validated wi
 All three were missing; installed via `npm i -g` (footprint: `~/.npm-global`, ~17 packages total incl. deps):
 
 | Server | npm package (version) | Binary | opencode wiring |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Bash | `bash-language-server` 5.6.0 | `bash-language-server start` | extensions: `.sh`, `.bash` |
 | YAML | `yaml-language-server` 1.24.0 | `yaml-language-server --stdio` | extensions: `.yml`, `.yaml` |
 | Dockerfile | `dockerfile-language-server-nodejs` 0.15.0 | `docker-langserver --stdio` | extensions: `Dockerfile`, `.dockerfile` |

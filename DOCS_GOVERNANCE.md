@@ -26,7 +26,7 @@
 ## 2. Карта: где какой документ живёт
 
 | Тип контента | Путь в `docs/` | Примечание |
-|---|---|---|
+| --- | --- | --- |
 | Обзор архитектуры | `architecture/ARCHITECTURE.md` | Compute Node, Edge Ingress, Topology |
 | Возможности системы | `architecture/EVALINE_EVABOT_CAPABILITIES_MANIFESTO.md` | Манифест (переименован из CAPABILITIES_MANIFESTO.md) |
 | Фабрика агентов | `architecture/GOOGLE_ECOSYSTEM_AGENT_FACTORY_ARCHITECTURE.md` | Google Cloud + Colab Pro |
@@ -48,7 +48,7 @@
 **Файлы, которые живут ТОЛЬКО в `eva-docs/` (не в `docs/`):**
 
 | Файл | Назначение |
-|---|---|
+| --- | --- |
 | `index.md` | Лендинг Quartz-сайта |
 | `README.md` | Описание Quartz-репо |
 | `CHANGELOG.md` (корень) | Quartz-навигация |
@@ -115,17 +115,20 @@ flowchart TD
 ## 5. Конвенции
 
 ### 5.1. Язык
+
 - Основной: **русский** (для внутренней документации)
 - Код, команды, имена файлов: **english**
 - Метаданные YAML: **english** ключи
 
 ### 5.2. Формат
+
 - Пишем в **Markdown (GFM)**
 - Заголовки через `##`, не `#` (верхний уровень резервируется для имени файла)
 - Код — в fenced blocks с указанием языка: ` ```bash `, ` ```python `
 - Mermaid-диаграммы — в ` ```mermaid ` блоках
 
 ### 5.3. Naming файлов
+
 - Верхний регистр для имён файлов: `ARCHITECTURE.md`, `SECURITY_AUDIT.md`
 - Каталоги — в нижнем регистре: `ops/`, `models/`, `architecture/`
 - README.md в каждом каталоге (описание назначения каталога)
@@ -133,6 +136,7 @@ flowchart TD
 - Индексы и каталоги (丸一覧) в `documentation_index.md`
 
 ### 5.4. Frontmatter (для Quartz)
+
 ```yaml
 ---
 title: "Название документа"
@@ -143,6 +147,7 @@ updated: 2026-09-14
 ```
 
 ### 5.5. Ссылки
+
 - Внутренние ссылки — относительные: `[Ссылка](./architecture/ARCHITECTURE.md)`
 - Внешние ссылки — полные URL
 - Не ссылайся на `docs-site/public/` — это артефакт сборки
@@ -181,7 +186,7 @@ updated: 2026-09-14
 ## 7. Таблица синхронизации
 
 | Шаг | Источник → Назначение | Команда | Частота |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 | `docs/` → `eva-docs/` | `rsync --include='*.md'` | При каждом изменении |
 | 2 | `eva-docs/` → GitHub | `git push origin main` | При каждом изменении |
 | 3 | `docs/` → `knowledge-base/current/` | `rsync --include='*.md'` | При каждом изменении |

@@ -10,7 +10,7 @@
 ## 1. Evaluation table (MCP + tooling)
 
 | Tool | Type | What it adds | Install | Memory/CPU cost | Priority |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | **Serena** (`oraios/serena`, ~29k★, MIT) | MCP | Symbol-level semantic code retrieval & editing via language servers (40+ langs): find-symbol, find-references, rename, replace-symbol-body. Surgical edits on large codebases at a fraction of the grep/read token cost. Directly complements the existing `typescript-language-server`. | `uvx --from git+https://github.com/oraios/serena serena start-mcp-server --context ide-assistant` (Python/uv; **not on npm**) | ~150–300 MB per project (language server) | **HIGH** |
 | **codebase-memory-mcp** (`DeusData/codebase-memory-mcp`, ~42k★, MIT) | MCP | Indexes the repo into a persistent knowledge graph (158 langs, sub-ms queries); cross-session context retention — "what/where is X" without re-reading files. 99% fewer tokens vs raw reads. Single static binary, zero deps. | GitHub release binary → `./codebase-memory-mcp serve` (see repo README) | ~100–200 MB RAM after first index (persistent on disk) | **HIGH** |
 | **claude-task-master** (npm `claude-task-master` 1.6.4, ~28k★, MIT) | MCP | PRD → dependency-aware task graph / kanban; keeps long multi-step refactors on track across sessions (solves "agent forgot step 3" on long chats). | `npm i -g claude-task-master` → `task-master init` → stdio `npx -y --package claude-task-master task-master-mcp` | ~50 MB (Node), state in `.taskmaster/` JSON | **HIGH** |
@@ -79,7 +79,7 @@ Notes:
 ## 3. LSP additions — what actually matters for EvaBot
 
 | Language/file | Status | Action |
-|---|---|---|
+| --- | --- | --- |
 | TypeScript/JS | ✅ covered (`typescript-language-server`) | keep; add `oxlint` + `eslint_d` as project devDeps so opencode's built-in eslint/oxlint LSPs light up |
 | Python | ✅ covered (pyright) | keep |
 | HTML/CSS/JSON | ✅ covered (vscode-*) | keep |

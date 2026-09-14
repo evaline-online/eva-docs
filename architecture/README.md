@@ -7,7 +7,9 @@
 ## 📂 Содержание
 
 ### [`ARCHITECTURE.md`](./ARCHITECTURE.md)
+
 Полная архитектура системы:
+
 - System Overview (диаграммы)
 - Компоненты (EvaFace, EvaBrain, WireGuard)
 - Структура кода (monorepo)

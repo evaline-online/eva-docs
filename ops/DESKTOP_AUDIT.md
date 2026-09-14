@@ -89,7 +89,7 @@ description: "Аудит содержимого ~/Desktop с классифик�
 | `Kilo-Code.desktop` (252 B) | переміщено | `_archive/cleanup-2026-09-07/Kilo-Code.desktop` |
 | `mcp-servers.json` (3 982 B) | переміщено | `_archive/cleanup-2026-09-07/mcp-servers.json` |
 | `evaline-com-ua/` (27 271 145 B) | переміщено (дублікат підтверджено: `cmp` по README.uk.md, scripts/convert_evaline.py, site/en/wholesale.md, site/ru/index.md, site/SUMMARY.md — усі ідентичні репо; `diff -rq` nested site — 0 відмінностей) | `_archive/cleanup-2026-09-07/evaline-com-ua/` |
-| `opencode/` (57 858 B) | переміщено (усередині лише eval-артефакти: звіти, JSON, скрипти, логи, __pycache__) | `_archive/cleanup-2026-09-07/opencode/` |
+| `opencode/` (57 858 B) | переміщено (усередині лише eval-артефакти: звіти, JSON, скрипти, логи, **pycache**) | `_archive/cleanup-2026-09-07/opencode/` |
 | `omniroute/` (21 110 B) | переміщено (звіти + порожній logs/) | `_archive/cleanup-2026-09-07/omniroute/` |
 
 - **Звільнено з поверхні Desktop: 27 354 961 B (~26.1 MiB).**

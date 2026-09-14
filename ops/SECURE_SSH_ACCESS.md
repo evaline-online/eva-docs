@@ -60,7 +60,7 @@ ssh evabot@localhost -p 2222
 When you connect via IAM, Google maps your email to a POSIX username:
 
 | Google Account | OS Login Username |
-|---|---|
+| --- | --- |
 | `evabot.online@gmail.com` | `evabot_online_gmail_com` |
 | `olegzai.server@gmail.com` | `olegzai_server_gmail_com` |
 

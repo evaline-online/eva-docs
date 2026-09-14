@@ -18,6 +18,7 @@ docs/changelog/
 ## 📋 Активные релизы
 
 ### [CHANGELOG.md](./CHANGELOG.md)
+
 **Полная сводка:** все релизы + unreleased features
 
 **Текущая версия:** v0.0.2  
@@ -29,6 +30,7 @@ docs/changelog/
 
 1. Создай файл: `docs/changelog/v0.1.0.md`
 2. Используй шаблон:
+
 ```markdown
 ## [v0.1.0] - YYYY-MM-DD — Название
 
@@ -47,8 +49,9 @@ docs/changelog/
 ### Removed
 - Deprecated feature
 ```
-3. Добавь ссылку в CHANGELOG.md
-4. Обнови этот README.md
+
+1. Добавь ссылку в CHANGELOG.md
+2. Обнови этот README.md
 
 ---
 

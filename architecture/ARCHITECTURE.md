@@ -45,12 +45,14 @@
 ## 🖥️ Components
 
 ### 1. EvaFace (Edge Gateway) - Iowa
+
 **VM:** `evaline-micro-vm`  
 **Type:** `e2-micro` (2 vCPU, 1 GB RAM)  
 **Region:** `us-central1-a`  
 **Cost:** $0.00/mo (Always Free Tier)
 
 **Role:**
+
 - TLS termination (Caddy 2.11)
 - HTTP/3 QUIC support
 - Reverse proxy to EvaBrain
@@ -58,23 +60,27 @@
 - Domain management
 
 **Domains:**
+
 - `evabot.online`
 - `evaline.online`
 - `evaline.network`
 - `evaline.website`
 
 **Software:**
+
 - Caddy 2.11
 - Linux 6.12 (Debian 13 Trixie)
 - Tailscale daemon
 
 ### 2. EvaBrain (Compute Core) - Frankfurt
+
 **VM:** `evabot-agent-vm`  
 **Type:** `c3-standard-8` (8 vCPU, 32 GB RAM)  
 **Region:** `europe-west3-a`  
 **Cost:** ~$357.80/mo (on-demand)
 
 **Role:**
+
 - LLM orchestration
 - Multi-agent deliberation (Consilium)
 - Knowledge Base server
@@ -82,6 +88,7 @@
 - WebSocket server (planned)
 
 **Software:**
+
 - Node.js 22
 - TypeScript 5.7
 - esbuild
@@ -90,10 +97,12 @@
 - Tailscale daemon
 
 ### 3. WireGuard Mesh
+
 **Network:** Tailscale 100.x  
 **Encryption:** ChaCha20-Poly1305  
 **Latency:** ~120ms (Frankfurt ↔ Iowa)  
 **Tunnels:**
+
 - `100.66.98.4` (Frankfurt)
 - `100.125.200.49` (Iowa)
 
@@ -102,6 +111,7 @@
 ## 📁 Code Architecture
 
 ### Monorepo Structure
+
 ```
 evabot-online/                       # GitHub: evaline-network/evabot-online
 ├── src/                             # TypeScript source (11,272 lines)
@@ -151,6 +161,7 @@ evabot-online/                       # GitHub: evaline-network/evabot-online
 ```
 
 ### Router Pattern
+
 Each router is self-contained:
 
 ```typescript
@@ -165,6 +176,7 @@ export function createModelsRouter(): Router {
 ```
 
 **Benefits:**
+
 - Modular (each file < 100 lines)
 - Testable (independent)
 - Hot-reloadable
@@ -177,7 +189,7 @@ export function createModelsRouter(): Router {
 ### REST API (30+ endpoints)
 
 | Category | Endpoints | Router |
-|----------|----------|--------|
+| ---------- | ---------- | -------- |
 | **System** | `/health`, `/roles`, `/logs`, `/worklog/*` | server.ts + LogsRouter |
 | **Models** | `/models`, `/models/free`, `/models/paid`, `/models/top`, `/models/command` | ModelsRouter |
 | **Chat** | `/chat`, `/chat/stream`, `/consilium` | ChatRouter |
@@ -186,6 +198,7 @@ export function createModelsRouter(): Router {
 | **Alerts** | `/alerts`, `/alerts/stats`, `/alerts/send`, `/alerts/channel`, `/alerts/config` | AlertsRouter |
 
 ### Request Flow
+
 ```
 1. HTTP request arrives at EvaFace (Caddy)
 2. TLS termination (Caddy)
@@ -206,6 +219,7 @@ export function createModelsRouter(): Router {
 ## 🤖 AI Model Architecture
 
 ### Multi-Provider Strategy
+
 ```
 ┌────────────────────────────────────────────┐
 │           UniversalLlmClient               │
@@ -225,12 +239,14 @@ export function createModelsRouter(): Router {
 ```
 
 ### Model Registry
+
 - **78 models** across 12 categories
 - **46 free** (zero cost, quotas)
 - **32 paid** (PAYG, USD/EUR pricing)
 - **6 tiers**: Free Quota+Paid, Vertex AI, Open Weights, Free Community, OmniRoute, OpenCode
 
 ### Rating System
+
 - **Quality** (40%): based on model name and category
 - **Speed** (25%): based on RPM quota and model type
 - **Context** (20%): based on context window size
@@ -241,6 +257,7 @@ export function createModelsRouter(): Router {
 ## 📚 Knowledge Base Architecture
 
 ### Data Flow
+
 ```
 knowledge-base/evaline-com-ua/
 ├── README.{en,ru,uk}.md
@@ -263,12 +280,14 @@ knowledge-base/evaline-com-ua/
 ```
 
 ### Search Algorithm
+
 - Keyword matching with frequency scoring
 - Title boost (+0.5)
 - Tag boost (+0.2 per tag)
 - Score: `min(0.99, 0.55 + (matches/tokens) * 0.44)`
 
 ### Future: Vector Search (v0.1.0)
+
 - Embedding model: Gemini embedding-004
 - Vector DB: ChromaDB
 - Semantic search instead of keyword
@@ -278,6 +297,7 @@ knowledge-base/evaline-com-ua/
 ## 🛡️ Security Architecture
 
 ### Defense in Depth
+
 ```
 Layer 1: Network (GCP Firewall)
   ↓
@@ -299,6 +319,7 @@ Layer 9: Cloud Armor (planned for v0.5.0)
 ```
 
 ### Alerting Flow
+
 ```
 Suspicious Activity
   ↓
@@ -321,6 +342,7 @@ Channels:
 ## 📊 Observability Architecture
 
 ### Logging Pipeline
+
 ```
 App Event
   ↓
@@ -336,6 +358,7 @@ Logger.write(category, tag, message)
 ```
 
 ### Metrics
+
 - HTTP request rate
 - Response time (p50, p95, p99)
 - Error rate by endpoint
@@ -344,6 +367,7 @@ Logger.write(category, tag, message)
 - Security events per hour
 
 ### Planned (v0.5.0)
+
 - Prometheus exporter
 - Grafana dashboards
 - OpenTelemetry tracing
@@ -353,6 +377,7 @@ Logger.write(category, tag, message)
 ## 🚀 Deployment Architecture
 
 ### CI/CD Pipeline
+
 ```
 GitHub Push (main branch)
   ↓
@@ -370,6 +395,7 @@ GitHub Actions
 ```
 
 ### Manual Deploy
+
 ```bash
 ./deploy-sync.sh "commit message"
 # = build + commit + push + sync to GCP

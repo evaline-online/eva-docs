@@ -24,7 +24,7 @@ description: Жива верификация фактического пути �
 Цепочка в `GoogleAuthProvider.getCredentials()` (src/core/GoogleAuthProvider.ts:27) — по приоритету:
 
 | # | Источник | Состояние на VM | Используется? |
-|---|----------|-----------------|---------------|
+| --- | ---------- | ----------------- | --------------- |
 | 1 | `process.env.GEMINI_API_KEY` | В `evabot-brain.service` **EnvironmentFile нет** → переменная не задана. В `/opt/omniroute/omniroute.env` задана, но это **другой сервис**, и значение — OAuth-токен `AQ.Ab8RN6I...` (НЕ `AIza...` API-ключ), который **протух** (live-проба → HTTP 401) | ❌ |
 | 2 | ADC refresh-token exchange (`~/.config/gcloud/legacy_credentials/evabot.online@gmail.com/adc.json`, client `32555940559-...` = gcloud CLI) | Файл существует, exchange успешен → Bearer `ya29.` токен, scope `cloud-platform`, аккаунт `evabot.online@gmail.com` | ✅ **АКТИВНЫЙ ПУТЬ** |
 | 3 | GCE metadata server | Достижим, но не вызывается (шаг 2 отрабатывает раньше) | — |
@@ -42,7 +42,7 @@ description: Жива верификация фактического пути �
 ## 2. Live-пробы (2026-09-07)
 
 | # | Проба | Результат |
-|---|-------|-----------|
+| --- | ------- | ----------- |
 | 1 | Vertex AI `gemini-2.5-flash:generateContent`, project `evabot-agent-server`, europe-west3, Bearer ADC | **HTTP 200**, `usageMetadata`, `trafficType: ON_DEMAND` |
 | 2 | `generativelanguage/v1beta/models` + Bearer ADC (cloud-platform scope), **без** `X-Goog-User-Project` | **HTTP 403 `ACCESS_TOKEN_SCOPE_INSUFFICIENT`** |
 | 3 | То же **с** `X-Goog-User-Project: evabot-agent-server` | Тот же HTTP 403 — заголовок не спасает: Gemini API требует scope `generative-language` либо API-ключ |
@@ -61,7 +61,7 @@ description: Жива верификация фактического пути �
 **Free tier Gemini API (актуальные ориентиры 2026; Google больше не публикует единую таблицу — смотрите AI Studio):**
 
 | Модель | RPM | TPM (input) | RPD |
-|--------|-----|-------------|-----|
+| -------- | ----- | ------------- | ----- |
 | Gemini 2.5 Flash | ~10–15 | 250K–1M | ~1 500 |
 | Gemini 2.5 Flash-Lite | ~15–30 | 250K–1M | ~1 500 |
 | Gemini 2.5 Pro | 5 | — | **50** (по сути платный с 2026) |
@@ -72,7 +72,7 @@ description: Жива верификация фактического пути �
 **Vertex AI цены (путь, который реально используем мы):**
 
 | Модель | Input / 1M | Output / 1M |
-|--------|-----------|-------------|
+| -------- | ----------- | ------------- |
 | gemini-2.5-flash | $0.30 | $2.50 |
 | gemini-2.5-pro | $1.25 (<200K ctx) / $2.50 (>200K) | $10.00 |
 | gemini-2.5-flash-lite | $0.075 | $0.30 |
