@@ -2,7 +2,7 @@
 domain: evaline.website
 badge: CHRONICLE
 role: Мастер-Хроника Релизов, Инженерный Worklog & Архитектурная Документация
-infra: evaline-micro-vm · 2 vCPU e2-micro · 1 GB RAM · Айова (США) · IP: 136.114.26.252
+infra: " evaline-micro-vm · 2 vCPU e2-micro · 1 GB RAM · Айова (США) · IP: 136.114.26.252"
 target: Публичный инженерный ворклог, документация архитектуры, спецификации RFC и история коммитов.
 theme: dark
 ---

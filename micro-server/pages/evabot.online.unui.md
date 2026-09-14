@@ -2,7 +2,7 @@
 domain: evabot.online
 badge: NEURAL CORE
 role: AI Вычислительное Ядро, Оркестрация Агентов & Мульти-LLM Консилиум
-infra: evabot-agent-vm · 8 vCPU Intel Xeon Sapphire Rapids · 32 GB RAM · Франкфурт (ФРГ) · IP: 34.159.202.82
+infra: " evabot-agent-vm · 8 vCPU Intel Xeon Sapphire Rapids · 32 GB RAM · Франкфурт (ФРГ) · IP: 34.159.202.82"
 target: Координация агентов, консилиум 78 моделей, векторная память и TUI-сервер.
 theme: dark
 ---

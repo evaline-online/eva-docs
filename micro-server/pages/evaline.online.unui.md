@@ -2,7 +2,7 @@
 domain: evaline.online
 badge: SECURITY & IAM
 role: Контур Периметровой Безопасности, IAM-Авторизация, OOM-Щит & Сервис-Меш
-infra: evaline-micro-vm · 2 vCPU e2-micro · 1 GB RAM · Айова (США) · IP: 136.114.26.252
+infra: " evaline-micro-vm · 2 vCPU e2-micro · 1 GB RAM · Айова (США) · IP: 136.114.26.252"
 target: OOM Shield защита e2-micro, фильтрация ботнетов, TLS-политики и взаимная аутентификация.
 theme: dark
 ---
