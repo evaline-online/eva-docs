@@ -1,8 +1,8 @@
 ---
 domain: evaline.network
 badge: EDGE MESH & ARCHITECTURE
-role: Визуализатор Архитектуры Кластера, Нод, Консилиума Агентов & Метрик Серверов
-infra: evaline-micro-vm (США) ⟷ evabot-agent-vm (ФРГ) · WireGuard Mesh Backbone
+role: "Визуализатор Архитектуры Кластера, Нод, Консилиума Агентов & Метрик Серверов"
+infra: "evaline-micro-vm (США) ⟷ evabot-agent-vm (ФРГ) · WireGuard Mesh Backbone"
 target: Интерактивный дэшборд узлов, мониторинг ОЗУ, SWAP, CPU, бэкенда, микросервисов и агентов.
 theme: dark
 ---
