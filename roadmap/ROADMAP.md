@@ -1,232 +1,72 @@
-# EvaBot Online — Roadmap
+# 🗺️ Roadmap & Prioritized Task Registry: EvaBot & EvaLine Ecosystem
 
-**Last Updated:** 2026-09-07  
-**Current Version:** v0.0.2  
-**Status:** ✅ Production Ready (MVP + Security)
-
----
-
-## 🎯 Стратегические цели
-
-1. **Universal Cyber-Terminal** - работает в браузере и CLI одинаково
-2. **Multi-Model Architecture** - 78 LLM моделей с единым интерфейсом
-3. **Corporate Knowledge Integration** - EvaLine KB на 182 документа
-4. **Zero-Trust Security** - автоматическая защита от атак
-5. **Production Observability** - полное логирование и алертинг
+> **Версия:** 2.0.0  
+> **Дата обновления:** 14 сентября 2026 г.  
+> **Кластер:** `evabot-agent-vm` (Frankfurt Core `100.66.98.4`) + `evaline-micro-vm` (Iowa Edge `136.114.26.252`)  
+> **Организация GitHub:** [`evaline-online`](https://github.com/evaline-online/evabot-online)
 
 ---
 
-## 📅 Timeline
+## 🎯 Сводный реестр задач по уровням приоритета
 
-```
-2026-09-03 ────────────────────────── 2027-Q1 ──────────────────── 2027-Q4
-       v0.0.1 (MVP)        v0.0.2 ✅ Current
-                              │
-                              ├─ v0.1.0 (Sept 2026)
-                              │  └─ Vector embeddings + Mobile UI
-                              │
-                              ├─ v0.2.0 (Oct 2026)
-                              │  └─ Consilium v2 + WebSocket
-                              │
-                              ├─ v0.3.0 (Nov 2026)
-                              │  └─ Voice + Export
-                              │
-                              └─ v0.4.0 (Dec 2026)
-                                 └─ Mobile PWA + Auth
-```
+### 🔴 Блок 1. Критический приоритет (P0 — Выполнить немедленно / Инфраструктура и Стабильность)
+
+- [ ] **TASK-P0-01: Добавить A-записи поддоменов в Spaceship DNS**
+  * **Цель:** Направить `docs.evabot.online` и `billing.evabot.online` на IP `136.114.26.252` (или wildcard `*.evabot.online`).
+  * **Результат:** Caddy на Iowa Edge автоматически выпускает SSL-сертификаты, сайты открываются по HTTPS без 404/NXDOMAIN.
+- [ ] **TASK-P0-02: Внедрить автоматическую валидацию CSS/HTML в deploy-sync.sh**
+  * **Цель:** Интегрировать pre-flight проверку баланса фигурных скобок `{ }` и целостности `<style>` перед коммитом и выкаткой.
+  * **Результат:** Исключение возможности поломки стилей ввода и TUI-интерфейса на проде.
+- [ ] **TASK-P0-03: Оформить и влить Pull Request в GitHub (Protected main)**
+  * **Цель:** Слить ветку `refactor/consolidate-core-architecture` в `main` через GitHub API / `gh pr create`.
+  * **Результат:** Синхронизация официальной ветки `main` репозитория.
+- [ ] **TASK-P0-04: Добавить Headless Smoke-тест рендеринга в CI**
+  * **Цель:** Автоматический запуск headless Chromium для проверки вычисленных стилей `#user-input` (`#070a10`) и отсутствия горизонтального переполнения экрана на 375px.
 
 ---
 
-## ✅ v0.0.2 — COMPLETED (2026-09-07)
+### 🟠 Блок 2. Высокий приоритет (P1 — Скорость ответа, Голос, STT и Telegram)
 
-### Security
-- [x] IP blocking system
-- [x] Rate limiting middleware
-- [x] 17 regex patterns for attack detection
-- [x] Auto-block mechanism
-- [x] Security endpoints
-
-### Knowledge Base
-- [x] EvaLine KB integration (182 documents)
-- [x] 6 languages support
-- [x] Multi-backend (memory/json/sqlite/vector)
-- [x] /kb commands
-- [x] KB search & list
-
-### Alerting
-- [x] Multi-channel alerts (6 channels)
-- [x] 4 severity levels
-- [x] Rate limiting
-- [x] Auto-integration with Security
-- [x] Alert endpoints
-
-### Logging
-- [x] 12 log categories
-- [x] 3 log files (main/user/error)
-- [x] HTTP request logging
-- [x] In-memory buffer
-- [x] Log endpoints
-
-### Refactoring
-- [x] server.ts: 815 → 211 lines (-74%)
-- [x] 7 modular routers
-- [x] Fixed ConsiliumEngine (12 errors → 0)
-- [x] Removed dist/ from Git (1.3MB)
-- [x] Removed legacy_archive/ (17MB)
+- [ ] **TASK-P1-05: Потоковая озвучка по предложениям (Sentence-Level Streaming TTS)**
+  * **Цель:** Отправлять текст в Edge-TTS сразу после первого завершенного предложения (`.` / `!`), не дожидаясь генерации всего текста.
+  * **Результат:** Задержка до первого звука снижается с 5 секунд до 300–400 мс.
+- [ ] **TASK-P1-06: Топ-3 бесплатных движка озвучки (Тройной отказоустойчивый контур)**
+  * **Движок 1 (Primary):** Microsoft Edge-TTS (Azure Neural: `uk-UA-PolinaNeural`, `ru-RU-SvetlanaNeural`, `en-US-AriaNeural`) — бесплатно, без лимитов.
+  * **Движок 2 (High-Quality Cloud Fallback):** Google Cloud TTS (Chirp3-HD / WaveNet) — 1M символов/мес бесплатно.
+  * **Движок 3 (Zero-Latency Local Offline):** Sherpa-ONNX / Piper TTS (локальный легковесный инференс на CPU, ~150 мс).
+- [ ] **TASK-P1-07: Распознавание речи (STT) и автоопределение языка аудиосообщений**
+  * **Цель:** Интеграция Groq Whisper-large-v3 (бесплатный тир, 200 мс транскрипция, автоопределение UK/RU/EN/DE/PL) + Google Cloud STT fallback.
+- [ ] **TASK-P1-08: Подключить живой WebAudio Canvas-эквалайзер**
+  * **Цель:** Анимированные зеленые/циановые полосы спектрограммы частот в кнопках `[ ▶ Speak ]` и `[ REC ]`.
+- [ ] **TASK-P1-09: Локальный кэш аудиодорожек по SHA256**
+  * **Цель:** Хранение сгенерированных MP3 в `data/tts-cache/<sha256(voice::text)>.mp3` с мгновенной (0 мс) повторной отдачей.
+- [ ] **TASK-P1-10: Развернуть вебхук Telegram-бота (@evabot_assistant)**
+  * **Цель:** Маршрутизация `/api/telegram/webhook` на Nginx с поддержкой входящих голосовых сообщений (Voice Notes) и inline-кнопок.
 
 ---
 
-## 🚧 v0.1.0 — Vector Embeddings & Mobile UI (Sept 2026)
+### 🟡 Блок 3. Средний приоритет (P2 — Знания компании, B2B Продажи и Расчёты)
 
-### High Priority
-- [ ] **Vector embeddings** via Gemini embedding-004
-- [ ] **ChromaDB integration** (local + remote)
-- [ ] **Real semantic search** in KB (replace keyword matching)
-- [ ] **Mobile-optimized UI** (responsive design, touch-friendly)
-- [ ] **Chat history** (localStorage + server-side sync)
-- [ ] **Code highlighting** (highlight.js or prism.js)
-- [ ] **Copy buttons** on code blocks
-
-### Medium Priority
-- [ ] Streaming improvements (token-by-token display)
-- [ ] Better error messages
-- [ ] Loading states
-- [ ] Markdown rendering improvements
-
-### Estimated: 2-3 weeks
+- [ ] **TASK-P2-11: Интегрировать оптовую сетку цен в SQLite FTS5**
+  * **Цель:** Ценовые пороги (розница, мелкий опт от 10 листов, дилер от 100 листов, контейнер) в EUR и UAH.
+- [ ] **TASK-P2-12: Интерактивный B2B-калькулятор партий, веса и объема**
+  * **Цель:** Расчет объема и веса заказа для выбора транспорта (бус до 1.5 т или полуприцеп 13.6 м до 20 т).
+- [ ] **TASK-P2-13: Генератор коммерческих предложений (PDF Quote Generator)**
+  * **Цель:** Автоматическое формирование PDF-спецификаций с реквизитами завода в Черноморске или хаба в Братиславе.
+- [ ] **TASK-P2-14: API-синхронизация складских остатков**
+  * **Цель:** Учет остатков готовых листов по цветам и текстурам в Братиславе и Черноморске.
+- [ ] **TASK-P2-15: Технические паспорта изделий (TDS) в базе знаний**
+  * **Цель:** Официальные протоколы испытаний, допуски усадки, сертификаты REACH/RoHS.
 
 ---
 
-## 🎯 v0.2.0 — Consilium v2 + WebSocket (Oct 2026)
+### 🟢 Блок 4. Плановый приоритет (P3 — Масштабирование, UX и Pro-Экосистема)
 
-### Consilium Engine v2
-- [ ] **10+ agent deliberation** (currently max 4)
-- [ ] **Voting system** for consensus
-- [ ] **Improved arbiter** with better synthesis
-- [ ] **Persona-based deliberation** (CEO, CTO, CISO, etc.)
-- [ ] **Parallel rounds** for speed
-
-### Real-time
-- [ ] **WebSocket** server (replace SSE for chat)
-- [ ] **Live typing indicators**
-- [ ] **Multi-user sessions** (collaborative chat)
-- [ ] **Live KB search** in chat
-
-### Estimated: 3-4 weeks
-
----
-
-## 🎤 v0.3.0 — Voice & Export (Nov 2026)
-
-### Voice
-- [ ] **Voice input** (Web Speech API)
-- [ ] **Voice output** (TTS via Gemini Live)
-- [ ] **Audio streaming**
-- [ ] **Voice commands** ("Hey EvaBot, search EVA")
-
-### Export
-- [ ] **PDF export** of conversations
-- [ ] **Markdown export** with formatting
-- [ ] **JSON export** for developers
-- [ ] **Share links** (read-only chat snapshots)
-
-### UI Improvements
-- [ ] **Dark/Light theme toggle**
-- [ ] **Font customization**
-- [ ] **Custom color schemes**
-- [ ] **Accessibility** (ARIA, keyboard nav)
-
-### Estimated: 4-5 weeks
-
----
-
-## 📱 v0.4.0 — Mobile PWA + Auth (Dec 2026)
-
-### Mobile
-- [ ] **Progressive Web App** (PWA)
-- [ ] **Offline mode** (service worker)
-- [ ] **Push notifications**
-- [ ] **Touch gestures**
-- [ ] **Install prompts**
-
-### Authentication
-- [ ] **OAuth2** (Google, Microsoft)
-- [ ] **Multi-user sessions**
-- [ ] **Per-user history**
-- [ ] **Usage analytics**
-- [ ] **Billing dashboard**
-
-### Estimated: 5-6 weeks
-
----
-
-## 🏢 v0.5.0 — Enterprise Features (Q1 2027)
-
-### Compliance
-- [ ] **GDPR compliance** tools
-- [ ] **Audit logging** (immutable)
-- [ ] **Data residency** controls
-- [ ] **Encryption at rest**
-
-### Integration
-- [ ] **n8n workflows** integration
-- [ ] **Webhook subscriptions**
-- [ ] **REST API** documentation (OpenAPI)
-- [ ] **GraphQL** endpoint
-- [ ] **SDK** (Python, JS, Go)
-
-### Estimated: 8-10 weeks
-
----
-
-## 🔮 v1.0.0 — Stable Release (Q2 2027)
-
-### Final Features
-- [ ] **100% test coverage**
-- [ ] **Performance benchmarks** (p95 < 200ms)
-- [ ] **Multi-region deployment**
-- [ ] **Auto-scaling**
-- [ ] **Production SLA** (99.9%)
-
-### Documentation
-- [ ] **Full API reference**
-- [ ] **Architecture deep-dive**
-- [ ] **Operations manual**
-- [ ] **Security whitepaper**
-
----
-
-## 🛑 Не в планах (Out of Scope)
-
-- ❌ Image generation (use external DALL-E/Imagen)
-- ❌ Video processing
-- ❌ Real-time translation
-- ❌ Email automation
-- ❌ CRM integration
-- ❌ Direct competitor models training
-
----
-
-## 📊 Success Metrics
-
-| Metric | v0.0.2 | v0.1.0 Target | v1.0.0 Target |
-|--------|--------|--------------|---------------|
-| Uptime | 99.5% | 99.9% | 99.95% |
-| P95 Latency | 500ms | 300ms | 200ms |
-| Concurrent Users | 10 | 100 | 1000 |
-| Models | 78 | 100 | 150 |
-| KB Documents | 182 | 500 | 2000 |
-| Daily Messages | 1K | 50K | 500K |
-| Languages | 6 | 10 | 20 |
-
----
-
-## 🤝 Contributing
-
-См. [CONTRIBUTING.md](https://github.com/evaline-network/evabot-online/blob/main/CONTRIBUTING.md) (в планах)
-
----
-
-**Last Review:** 2026-09-07  
-**Next Review:** 2026-10-01  
-**Owner:** EvaBot Engineering Team
+- [ ] **TASK-P3-16: Активировать 10 специализированных ИИ-агентов на pro.evaline.online**
+  * **Цель:** Системные промпты и ролевые контексты для 10 профессий (OEM, лекала, палубы, татами, агро, ложементы, таможня ЕС и др.).
+- [ ] **TASK-P3-17: Динамическая ротация кнопок-подсказок (Quick Prompts)**
+  * **Цель:** Контекстное обновление плашек вопросов в зависимости от темы беседы.
+- [ ] **TASK-P3-18: Экспорт истории диалога**
+  * **Цель:** Скачивание сессии в форматах Markdown / JSON / TXT.
+- [ ] **TASK-P3-19: Автомониторинг и Telegram-алерты**
+  * **Цель:** Уведомления о здоровье нод кластера и расходе памяти.

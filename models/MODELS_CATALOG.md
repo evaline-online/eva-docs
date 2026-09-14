@@ -1,7 +1,7 @@
 # 📊 Детальный список моделей EvaBot v0.0.1
 
-**Дата:** 2026-09-07  
-**Всего моделей:** 78
+**Дата:** 2026-09-14  
+**Всего моделей:** 107
 
 ---
 
@@ -9,13 +9,13 @@
 
 | Категория | Количество | %
 |-----------|-----------|-----|
-| **Бесплатные** | 46 | 59% |
-| **Платные** | 32 | 41% |
-| **Всего** | 78 | 100% |
+| **Бесплатные** | 57 | 53% |
+| **Платные** | 50 | 47% |
+| **Всего** | 107 | 100% |
 
 ---
 
-## 💰 БЕСПЛАТНЫЕ МОДЕЛИ (46)
+## 💰 БЕСПЛАТНЫЕ МОДЕЛИ (57)
 
 ### Google Gemini (Next-Gen) - 7 моделей
 1. **gemini-3.8-flash** - Gemini 3.8 Flash (Frontier agentic)
@@ -53,7 +53,7 @@
 ### OpenCode Go Platforms - 12 моделей
 26-37. (OpenCode Go free models)
 
-### OpenRouter Free Models - 9 моделей
+### OpenRouter Free (Legacy) - 9 моделей
 38. **deepseek/deepseek-r1:free** - DeepSeek R1 (Free on OpenRouter)
 39. **meta-llama/llama-3.3-70b:free** - Llama 3.3 70B (Free)
 40. **google/gemini-2.0-flash-exp:free** - Gemini 2.0 Flash Exp (Free)
@@ -64,9 +64,22 @@
 45. **openai/gpt-4o-mini:free** - GPT-4o Mini (Free)
 46. **cognitivecomputations/dolphin3.0-r1-2506:free** - Dolphin 3.0 R1 (Free)
 
+### OpenRouter Free (Sep 2026 Fleet) - 11 моделей
+47. **qwen/qwen3.8-max:free** - Qwen3.8 Max (Coding leader, 1M ctx) 🆕
+48. **zhipu/glm-5.3:free** - GLM-5.3 (Coding ~68.3, 1M ctx) 🆕
+49. **qwen/qwen3.8-27b:free** - Qwen3.8-27B (Lightweight coding, 262K) 🆕
+50. **zhipu/glm-5.3-flash:free** - GLM-5.3 Flash (Cheap flash, 1M ctx) 🆕
+51. **zhipu/glm-5.2:free** - GLM-5.2 (Open-weight, 1M ctx) 🆕
+52. **tencent/hy4-preview:free** - Hy4 Preview (Coding ~68.9, 1M ctx) 🆕
+53. **openai/gpt-oss-120b:free** - GPT-OSS 120B (Coding+reasoning, 131K) 🆕
+54. **poolside/laguna-m-1:free** - Laguna M.1 (Coding agent, 262K) 🆕
+55. **openai/gpt-oss-20b:free** - GPT-OSS 20B (Fast coding, 131K) 🆕
+56. **poolside/laguna-xs-2:free** - Laguna XS.2 (Lightweight agent, 262K) 🆕
+57. **xiaomi/muse-spark-1.3:free** - Muse Spark 1.3 (1M ctx) 🆕
+
 ---
 
-## 💳 ПЛАТНЫЕ МОДЕЛИ (32)
+## 💳 ПЛАТНЫЕ МОДЕЛИ (50)
 
 ### Anthropic Claude on Google Cloud - 3 модели
 1. **claude-3-7-sonnet** - Claude 3.7 Sonnet (Vertex AI)
@@ -89,7 +102,7 @@
 10. **jamba-1.5-large** - AI21 Jamba 1.5 Large
 11. **command-r-plus** - Cohere Command R+
 
-### OpenRouter Premium - 16 моделей
+### OpenRouter Premium (Legacy) - 16 моделей
 12. **openai/gpt-4o** - GPT-4o (OpenRouter Premium)
 13. **openai/gpt-4o-mini** - GPT-4o Mini (OpenRouter Premium)
 14. **openai/o1-preview** - OpenAI o1 Preview (OpenRouter Premium)
@@ -107,12 +120,34 @@
 26. **openai/o3-mini** - OpenAI o3-mini (OpenRouter Premium)
 27. **openai/o1** - OpenAI o1 (OpenRouter Premium)
 
+### OpenRouter Premium (Sep 2026 Fleet) - 18 моделей
+28. **anthropic/claude-opus-5** - Claude Opus 5 (SWE-bench 96%, $5/$25) 🆕
+29. **anthropic/claude-sonnet-5** - Claude Sonnet 5 (SWE-bench 85.2%, $2/$10) 🆕
+30. **anthropic/claude-fable-5.1** - Claude Fable 5.1 (#1 BenchAlign, $10/$50) 🆕
+31. **anthropic/claude-fable-5** - Claude Fable 5 (SWE-bench 95%, $10/$50) 🆕
+32. **anthropic/claude-mythos-5.1** - Claude Mythos 5.1 (Sep 1 2026, $10/$50) 🆕
+33. **openai/gpt-6-astra** - GPT-6 Astra (Terminal-Bench leader, 1M ctx, $10/$50) 🆕
+34. **openai/gpt-5.6-sol** - GPT-5.6 Sol (Term-Bench 37.3%, $5/$30) 🆕
+35. **openai/gpt-5.6-terra** - GPT-5.6 Terra ($2.50/$15) 🆕
+36. **openai/gpt-5.6-luna** - GPT-5.6 Luna ($1/$6) 🆕
+37. **google/gemini-3.7-flash** - Gemini 3.7 Flash ($0.75/$3.75) 🆕
+38. **deepseek/deepseek-v4-pro** - DeepSeek V4 Pro (Frontier reasoning) 🆕
+39. **deepseek/deepseek-v4-flash** - DeepSeek V4 Flash (Fast efficient) 🆕
+40. **deepseek/deepseek-v3.2** - DeepSeek V3.2 (MoE update) 🆕
+41. **qwen/qwen3.8-max** - Qwen3.8 Max (Premium, 1M ctx) 🆕
+42. **zhipu/glm-5.3** - GLM-5.3 (Premium, Coding ~68.3) 🆕
+43. **moonshot/kimi-k3** - Kimi K3 (Moonshot reasoning) 🆕
+44. **x-ai/grok-4.6** - Grok 4.6 (xAI frontier) 🆕
+
 ### OmniRoute Daemon Cluster - 5 моделей
-28. **omniroute/gpt-4o** - OmniRoute GPT-4o (Edge Proxy)
-29. **omniroute/o1** - OmniRoute OpenAI o1 (Edge Proxy)
-30. **omniroute/claude-sonnet-4-5** - OmniRoute Claude Sonnet 4.5
-31. **omniroute/claude-3.5-sonnet** - OmniRoute Claude 3.5 Sonnet
-32. **omniroute/grok-2** - OmniRoute Grok 2 (Edge Proxy)
+45. **omniroute/gpt-4o** - OmniRoute GPT-4o (Edge Proxy)
+46. **omniroute/o1** - OmniRoute OpenAI o1 (Edge Proxy)
+47. **omniroute/claude-sonnet-4-5** - OmniRoute Claude Sonnet 4.5
+48. **omniroute/claude-3.5-sonnet** - OmniRoute Claude 3.5 Sonnet
+49. **omniroute/grok-2** - OmniRoute Grok 2 (Edge Proxy)
+
+### OmniRoute Edge Fleet (Sep 2026) - 1 модель
+50. **omni/zai-glm-5.3-flash** - OmniRoute Z.ai GLM 5.3 Flash (edge) 🆕
 
 ---
 
@@ -121,14 +156,17 @@
 ### Бесплатные (по категориям)
 - **OmniRoute Daemon Cluster:** 13 моделей
 - **OpenCode Go Platforms:** 12 моделей
-- **OpenRouter Free Models:** 9 моделей
+- **OpenRouter Free (Legacy):** 9 моделей
+- **OpenRouter Free (Sep 2026 Fleet):** 11 моделей 🆕
 - **Google Gemini (Next-Gen):** 7 моделей
 - **Google Gemini (Long-Context):** 3 модели
 - **Google Gemma (Open Weights):** 2 модели
 
 ### Платные (по категориям)
-- **OpenRouter Premium:** 16 моделей
+- **OpenRouter Premium (Legacy):** 16 моделей
+- **OpenRouter Premium (Sep 2026 Fleet):** 18 моделей 🆕
 - **OmniRoute Daemon Cluster:** 5 моделей
+- **OmniRoute Edge Fleet:** 1 модель 🆕
 - **Anthropic Claude on Google Cloud:** 3 модели
 - **Meta Llama 3 on Google Cloud:** 3 модели
 - **Mistral AI on Google Cloud:** 2 модели
@@ -137,25 +175,42 @@
 
 ---
 
-## 🎯 Рекомендации
+## 🎯 Рекомендации (Sep 2026)
 
-### Для старта (бесплатно):
+### Для coding-агента (бесплатно):
 ```
- gemini-2.5-flash  ⭐ DEFAULT - лучший баланс скорость/качество
- gemini-2.0-flash  - быстрый, легкий
- gemini-1.5-flash  - 1M context
- gemma-2-9b-it     - Open Weights, быстрый
+ qwen/qwen3.8-max:free     ⭐ #1 Coding Leader (1M ctx, open-weight)
+ zhipu/glm-5.3:free         ⭐ Coding ~68.3 (1M ctx, open-weight)
+ tencent/hy4-preview:free   ⭐ Coding ~68.9 (1M ctx, open-weight)
+ openai/gpt-oss-120b:free   - Coding+reasoning agent (131K)
+ poolside/laguna-m-1:free   - Coding agent with tools (262K)
+```
+
+### Для coding-агента (платно):
+```
+ anthropic/claude-opus-5     ⭐ SWE-bench Verified 96% (лидер)
+ openai/gpt-6-astra          ⭐ Terminal-Bench 4.0 leader 57.7% (1M ctx)
+ anthropic/claude-fable-5.1  - #1 BenchAlign 84.2
+ anthropic/claude-sonnet-5   - SWE-bench 85.2% ($2/$10, best price/quality)
+ openai/gpt-5.6-luna         - Budget coding ($1/$6)
+```
+
+### Для быстрых задач (бесплатно):
+```
+ gemini-3.8-flash            - Frontier agentic model
+ gemini-2.5-flash            ⭐ DEFAULT - баланс скорость/качество
+ zhipu/glm-5.3-flash:free    - Дешёвый флеш (1M ctx)
 ```
 
 ### Для серьезных задач (платно):
 ```
- claude-3-7-sonnet  - лучший reasoning (70.3% SWE-bench)
- deepseek-r1        - open reasoning
- gpt-4o             - multimodal flagship
+ anthropic/claude-opus-5      - лучший reasoning (96% SWE-bench)
+ openai/gpt-6-astra           - лидер Terminal-Bench (57.7%)
+ anthropic/claude-mythos-5.1  - frontier reasoning
 ```
 
 ---
 
 **© 2026 EvaBot Ecosystem**  
 **Version: 0.0.1 MVP**  
-**Models: 78 (46 free + 32 paid)**
+**Models: 107 (57 free + 50 paid)**
