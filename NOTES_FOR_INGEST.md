@@ -1,11 +1,9 @@
 # NotebookLM Ingest Manifest
 
-Автогенерация: 2026-09-14 15:21
+Автогенерация: 2026-09-14 21:54
 
-## Добавить в ноутбук 'antigravity'
+## Добавить в ноутбук 'antigravity':
 
-(первая синхронизация — все .md файлы)
-/var/www/evabot-backend/docs/COMMANDS.md
 /var/www/evabot-backend/docs/DOCS_GOVERNANCE.md
 /var/www/evabot-backend/docs/DOCUMENTATION_INDEX.md
 /var/www/evabot-backend/docs/GLOSSARY.md
@@ -22,6 +20,19 @@
 /var/www/evabot-backend/docs/deployment/README.md
 /var/www/evabot-backend/docs/development/CODE_AUDIT_v0.0.2.md
 /var/www/evabot-backend/docs/development/README.md
+/var/www/evabot-backend/docs/history/evabot-v0/README.md
+/var/www/evabot-backend/docs/history/evabot-v0/evabot_cli_verification.en.md
+/var/www/evabot-backend/docs/history/evabot-v0/evabot_cli_verification.ru.md
+/var/www/evabot-backend/docs/history/evabot-v0/evabot_cli_verification.uk.md
+/var/www/evabot-backend/docs/history/evabot-v0/evabot_full_documentation.en.md
+/var/www/evabot-backend/docs/history/evabot-v0/evabot_full_documentation.ru.md
+/var/www/evabot-backend/docs/history/evabot-v0/evabot_full_documentation.uk.md
+/var/www/evabot-backend/docs/history/evabot-v0/evabot_modular_architecture.en.md
+/var/www/evabot-backend/docs/history/evabot-v0/evabot_modular_architecture.ru.md
+/var/www/evabot-backend/docs/history/evabot-v0/evabot_modular_architecture.uk.md
+/var/www/evabot-backend/docs/history/evabot-v0/evabot_v001_release.en.md
+/var/www/evabot-backend/docs/history/evabot-v0/evabot_v001_release.ru.md
+/var/www/evabot-backend/docs/history/evabot-v0/evabot_v001_release.uk.md
 /var/www/evabot-backend/docs/kanban/KANBAN.md
 /var/www/evabot-backend/docs/kanban/README.md
 /var/www/evabot-backend/docs/models/GEMINI_QUOTA_VERIFICATION.md
@@ -32,7 +43,6 @@
 /var/www/evabot-backend/docs/ops/CLOUD_TTS.md
 /var/www/evabot-backend/docs/ops/DESKTOP_AUDIT.md
 /var/www/evabot-backend/docs/ops/EVALINE_ONLINE_INGEST.md
-/var/www/evabot-backend/docs/ops/MODEL_REGISTRY_SYNC.md
 /var/www/evabot-backend/docs/ops/OPENCODE_APPLIED.md
 /var/www/evabot-backend/docs/ops/OPENCODE_EXTENSIONS.md
 /var/www/evabot-backend/docs/ops/SAFE_DEPLOY.md
