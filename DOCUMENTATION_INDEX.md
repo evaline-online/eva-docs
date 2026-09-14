@@ -108,6 +108,21 @@ AI модели и маршрутизация
 - [README.md](./history/evabot-v0/README.md) — index
 - `evabot_modular_architecture.{ru,en,uk}.md` — полная архитектура v0
 - `evabot_v001_release.{ru,en,uk}.md` — релиз v0.0.1
+
+### 💾 [micro-server/](./micro-server/) — Архив микросервера (Iowa)
+
+Документация, сведённая с микро-сервера `100.125.200.49` (Iowa) — мультиязычные версии, база знаний, UI v1, доменные спецификации
+
+- `architecture/` — локализованные архитектурные спецификации (EN/RU/UK)
+- `audit/` — отчёты аудита и диагностики (EN/RU/UK)
+- `knowledge-base/` — гибридная база знаний (177 md на 6 языках) + dossier компании
+- `pages/` — доменные спецификации (.unui.md)
+- `legacy-ui/` — архив интерфейса v1 (en/uk/ru)
+- `frontend/` — frontend тесты
+- `user_guide.{en,ru,uk}.md` — руководство пользователя
+- `audit_and_diagnosis.{en,ru,uk}.md` — отчёты аудита
+
+---
 - `evabot_cli_verification.{ru,en,uk}.md` — верификация CLI
 - `evabot_full_documentation.{ru,en,uk}.md` — полная документация
 
@@ -133,7 +148,8 @@ AI модели и маршрутизация
 | roadmap/ & kanban/ | 4 | ~510 |
 | changelog/ & deployment/ | 4 | ~390 |
 | history/evabot-v0/ | 13 | ~2,400 |
-| **ИТОГО** | **53** | **~12,400** |
+| micro-server/ | 232 | ~30,000 |
+| **ИТОГО** | **285** | **~42,400** |
 
 ---
 
